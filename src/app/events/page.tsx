@@ -248,7 +248,7 @@ export default function EventsPage() {
     setUploadModalOpen(true);
   };
 
-  const handleUploadComplete = (uploadedFiles: any[]) => {
+  const handleUploadComplete = (uploadedFiles: File[]) => {
     console.log(`Successfully uploaded ${uploadedFiles.length} files to ${selectedEvent?.title}`);
     // In real app, you would refresh the event data to show updated image count
   };

@@ -7,10 +7,18 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: string;
+  authenticated: boolean;
+}
+
 interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onAuthenticated: (user: any) => void;
+  onAuthenticated: (user: User) => void;
   defaultMode?: 'login' | 'signup';
 }
 
