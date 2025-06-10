@@ -431,7 +431,7 @@ function BulkEditModal({
                     checked={bulkUpdates.pricing?.free || false}
                     onChange={(e) => setBulkUpdates({
                       ...bulkUpdates,
-                      pricing: { ...bulkUpdates.pricing, free: e.target.checked }
+                      pricing: { free: false, premium: false, ...bulkUpdates.pricing, free: e.target.checked }
                     })}
                     className="rounded border-gray-300"
                   />
@@ -444,7 +444,7 @@ function BulkEditModal({
                     checked={bulkUpdates.pricing?.premium || false}
                     onChange={(e) => setBulkUpdates({
                       ...bulkUpdates,
-                      pricing: { ...bulkUpdates.pricing, premium: e.target.checked }
+                      pricing: { free: false, premium: false, ...bulkUpdates.pricing, premium: e.target.checked }
                     })}
                     className="rounded border-gray-300"
                   />
@@ -459,7 +459,7 @@ function BulkEditModal({
                       className="w-32"
                       onChange={(e) => setBulkUpdates({
                         ...bulkUpdates,
-                        pricing: { ...bulkUpdates.pricing, price: Number(e.target.value) }
+                        pricing: { free: false, premium: false, ...bulkUpdates.pricing, price: Number(e.target.value) }
                       })}
                     />
                   </div>
