@@ -1,19 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { X, Eye, EyeOff, Mail, Lock, User, Camera } from "lucide-react";
+import { X, Eye, EyeOff, Mail, Lock, User as UserIcon, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
-interface User {
-  id: string;
-  email: string;
-  name: string;
-  role: string;
-  authenticated: boolean;
-}
+import { User } from "@/types";
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -79,12 +72,21 @@ export default function AuthModal({ isOpen, onClose, onAuthenticated, defaultMod
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       // Simulate successful authentication
-      const user = {
+      const user: User = {
         id: `user-${Date.now()}`,
         email: formData.email,
         name: formData.name || formData.email.split('@')[0],
         role: 'user',
-        authenticated: true
+        status: 'active',
+        joinDate: new Date().toISOString(),
+        lastActive: new Date().toISOString(),
+        downloads: 0,
+        uploads: 0,
+        revenue: 0,
+        metadata: {
+          emailVerified: false,
+          twoFactorEnabled: false
+        }
       };
 
       onAuthenticated(user);
@@ -163,7 +165,7 @@ export default function AuthModal({ isOpen, onClose, onAuthenticated, defaultMod
             {mode === 'signup' && (
               <div>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
                     type="text"
                     placeholder="Full name"
