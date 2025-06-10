@@ -10,6 +10,24 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import EventImageUploadModal from "@/components/EventImageUploadModal";
 
+interface UploadFile {
+  id: string;
+  file: File;
+  progress: number;
+  status: 'pending' | 'uploading' | 'processing' | 'completed' | 'error';
+  error?: string;
+  url?: string;
+  thumbnailUrl?: string;
+  metadata: {
+    title: string;
+    photographer: string;
+    category: string;
+    tags: string[];
+    type: 'photo' | 'video' | 'illustration' | 'vector';
+    premium: boolean;
+  };
+}
+
 interface Event {
   id: string;
   title: string;
@@ -248,7 +266,7 @@ export default function EventsPage() {
     setUploadModalOpen(true);
   };
 
-  const handleUploadComplete = (uploadedFiles: File[]) => {
+  const handleUploadComplete = (uploadedFiles: UploadFile[]) => {
     console.log(`Successfully uploaded ${uploadedFiles.length} files to ${selectedEvent?.title}`);
     // In real app, you would refresh the event data to show updated image count
   };
