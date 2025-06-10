@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = 'force-dynamic';
+
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
@@ -33,7 +35,6 @@ const navigation = [
   { name: "Content Management", href: "/admin/content", icon: Images },
   { name: "Content Approval", href: "/admin/content-approval", icon: Shield },
   { name: "Face Management", href: "/admin/face-management", icon: Users },
-  { name: "Face Analytics", href: "/admin/face-analytics", icon: BarChart3 },
   { name: "Event Management", href: "/admin/events", icon: Calendar },
   { name: "Bulk Upload", href: "/admin/bulk-upload", icon: Package },
   { name: "User Management", href: "/admin/users", icon: Users },

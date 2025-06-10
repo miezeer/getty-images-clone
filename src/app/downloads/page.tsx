@@ -16,17 +16,6 @@ interface DownloadHistoryItem {
   image_photographer: string;
 }
 
-interface DownloadHistoryItem {
-  id: string;
-  user_id: string;
-  image_id: string;
-  download_type: "free" | "premium" | "purchase";
-  resolution: string;
-  price_paid: number;
-  downloaded_at: string;
-  image_title: string;
-  image_photographer: string;
-}
 import DownloadHistory from "@/components/DownloadHistory";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
