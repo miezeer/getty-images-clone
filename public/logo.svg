@@ -1,0 +1,24 @@
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="100" fill="#000000"/>
+
+  <!-- Letter M -->
+  <path d="M0 100V0h40l20 60 20-60h40v100h-30V30l-15 45h-20l-15-45v70H0z" fill="#ffffff"/>
+
+  <!-- Letter I with lines -->
+  <rect x="140" y="10" width="60" height="8" fill="#ffffff"/>
+  <rect x="170" y="25" width="30" height="4" fill="#ffffff"/>
+  <rect x="170" y="35" width="25" height="4" fill="#ffffff"/>
+  <rect x="170" y="45" width="30" height="4" fill="#ffffff"/>
+
+  <!-- Letter Z with geometric design -->
+  <polygon points="140,60 200,60 200,70 160,85 200,85 200,100 140,100 140,90 180,75 140,75" fill="#ffffff"/>
+  <rect x="150" y="88" width="15" height="4" fill="#ffffff"/>
+  <rect x="170" y="88" width="8" height="4" fill="#ffffff"/>
+
+  <!-- Letter E -->
+  <path d="M220 100V60h60v10h-40v5h35v8h-35v7h40v10h-60z" fill="#ffffff"/>
+
+  <!-- Letter R -->
+  <path d="M260 100V0h50c15 0 25 10 25 20 0 8-5 15-12 18l15 42h-35l-10-30h-3v30h-30zM290 20v20h15c5 0 8-3 8-8v-4c0-5-3-8-8-8h-15z" fill="#ffffff"/>
+</svg>

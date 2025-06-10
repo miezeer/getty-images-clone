@@ -1,0 +1,7 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#000000" rx="2"/>
+
+  <!-- Letter M -->
+  <path d="M2 28V4h8l4 12 4-12h8v24h-6V10l-3 9h-4l-3-9v18H2z" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,7 @@
+// ... existing code ... <before the ErrorBoundaryState interface>
+export interface ErrorBoundaryState {
+  hasError: boolean;
+  error?: Error;
+  errorInfo?: React.ErrorInfo;
+}
+// ... existing code ... <after the ErrorBoundaryState interface>
