@@ -4,6 +4,8 @@ import "./globals.css";
 import ClientBody from "./ClientBody";
 import { RealtimeUploadProvider, RealtimeUploadNotifications } from "@/components/RealtimeUploadManager";
 
+export const dynamic = 'force-dynamic';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

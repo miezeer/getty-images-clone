@@ -7,6 +7,26 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    runtime: 'nodejs',
+    serverActions: {
+      allowedOrigins: ['*'],
+    },
+  },
+  // Force all pages to be dynamic
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
   images: {
     unoptimized: true,
     domains: [
