@@ -340,7 +340,7 @@ function BulkEditModal({
             {updateFields.has('status') && (
               <Select
                 value={bulkUpdates.status || ''}
-                onValueChange={(value) => setBulkUpdates({ ...bulkUpdates, status: value as any })}
+                onValueChange={(value) => setBulkUpdates({ ...bulkUpdates, status: value as "active" | "inactive" | "featured" | "archived" })}
               >
                 <SelectTrigger className="w-40">
                   <SelectValue />
@@ -626,7 +626,7 @@ function ContentEditModal({
                   <Label htmlFor="status">Status</Label>
                   <Select
                     value={editedContent.status}
-                    onValueChange={(value) => setEditedContent({ ...editedContent, status: value as any })}
+                    onValueChange={(value) => setEditedContent({ ...editedContent, status: value as "active" | "inactive" | "featured" | "archived" })}
                   >
                     <SelectTrigger>
                       <SelectValue />
@@ -1216,7 +1216,7 @@ export default function ContentManagementPage() {
   const handleToggleStatus = (id: string, status: string) => {
     setContent(prev => prev.map(item =>
       item.id === id
-        ? { ...item, status: status as any, lastModified: new Date().toISOString() }
+        ? { ...item, status: status as "active" | "inactive" | "featured" | "archived", lastModified: new Date().toISOString() }
         : item
     ));
   };
@@ -1224,7 +1224,7 @@ export default function ContentManagementPage() {
   const handleBatchStatusUpdate = (status: string) => {
     setContent(prev => prev.map(item =>
       selectedContent.includes(item.id)
-        ? { ...item, status: status as any, lastModified: new Date().toISOString() }
+        ? { ...item, status: status as "active" | "inactive" | "featured" | "archived", lastModified: new Date().toISOString() }
         : item
     ));
     setSelectedContent([]);
